@@ -157,7 +157,7 @@ async function registerUser() {
   console.log(datos);
   
 
-  const request = await fetch('http://localhost:8080/auth/signup', {
+  const request = await fetch('https://www.brisbiere.com/auth/signup', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

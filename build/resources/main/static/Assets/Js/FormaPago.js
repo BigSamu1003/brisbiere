@@ -87,7 +87,7 @@ paypal.Buttons({
     },
     // Sets up the transaction when a PayPal payment button is clicked
     createOrder: async (data, actions) => {
-        const response = await fetch("http://localhost:8080/paypal/order", {
+        const response = await fetch("https://www.brisbiere.com/paypal/order", {
             method: "post",
             headers: {
                 'Accept': 'application/json',
@@ -103,7 +103,7 @@ paypal.Buttons({
     },
     // Finalize the transaction after payer approval
     onApprove: async (data, actions) => {
-        const response = await fetch(`http://localhost:8080/paypal/order/${data.orderID}/capture`, {
+        const response = await fetch(`https://www.brisbiere.com/paypal/order/${data.orderID}/capture`, {
             method: "post"
         });
         const orderData = await response.json();
@@ -129,7 +129,7 @@ async function saveOrder(){
     let totalProducts = JSON.parse(localStorage.totalProducts);
     let date = new Date().toLocaleString("sv-SE");
 
-    const lastOrderIdRequest = await fetch('http://localhost:8080/orders/lastOrderId', {
+    const lastOrderIdRequest = await fetch('https://www.brisbiere.com/orders/lastOrderId', {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
@@ -190,7 +190,7 @@ async function saveOrder(){
         "items": orderItemsArray
     }
 
-    const request = await fetch('http://localhost:8080/orders/save', {
+    const request = await fetch('https://www.brisbiere.com/orders/save', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -218,7 +218,7 @@ async function sendEmail(){
 
     console.log(emailRequest);
 
-    const request = await fetch("http://localhost:8080/email/sendMessage",{
+    const request = await fetch("https://www.brisbiere.com/email/sendMessage",{
         method: 'POST',
         headers:{
             'Accept': 'application/json',
