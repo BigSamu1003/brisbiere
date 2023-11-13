@@ -6,7 +6,7 @@ window.addEventListener("load", function (){ //cuando se cargue la página
 
 async function loadUser(){
 
-    const request = await fetch('http://localhost:8080/users/email/' + localStorage.email,{
+    const request = await fetch('https://www.brisbiere.com/users/email/' + localStorage.email,{
         method : 'GET',
         headers: {
             'Accept': 'application/json',
@@ -32,7 +32,7 @@ async function loadUser(){
 
 async function loadOrders(){
 
-    const request = await fetch('http://localhost:8080/orders/' + localStorage.usuarioId,{
+    const request = await fetch('https://www.brisbiere.com/orders/' + localStorage.usuarioId,{
         method : 'GET',
         headers: {
             'Accept': 'application/json',
@@ -62,7 +62,7 @@ async function loadOrders(){
 async function eliminarUsuario(){
     confirm("¿Está seguro que quiere eliminar su cuenta?");
 
-    const request = await fetch('http://localhost:8080/users/delete/' + localStorage.usuarioId,{
+    const request = await fetch('https://www.brisbiere.com/users/delete/' + localStorage.usuarioId,{
         method : 'DELETE',
         headers: {
             // 'Accept': 'application/json',
